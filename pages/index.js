@@ -1,7 +1,16 @@
 import Head from 'next/head';
+import Title from '../components/Title';
 
+const products = [
+    {id: 1, title: 'First Product'},
+    {id: 2, title: 'Second Product'},
+    {id: 3, title: 'Third Product'},
+]
 
 export default function HomePage() {
+  console.log(
+    '[HomePage] render:',products) ;
+ 
   return (
     <>
       <Head>
@@ -10,8 +19,9 @@ export default function HomePage() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main>
-        <h1>Next Shop</h1>
+      <main className='px-6 py-4'>
+        <Title>Next Shop</Title>
+        <p>[TODO: display products]</p>
       </main>
     </>
   );
