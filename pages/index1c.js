@@ -3,11 +3,6 @@ import Head from 'next/head';
 import Title from '../components/Title';
 import {getProducts} from '../lib/products';
 
-// const products = [
-//   { id: 1, title: 'First Product' },
-//   { id: 2, title: 'Second Product' },
-//   { id: 3, title: 'Third Product' },
-// ];
 export async function getServerSideProps() {
   console.log('[HomePage] getStaticProps()');
   const products = await getProducts();
