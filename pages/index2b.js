@@ -5,12 +5,6 @@ import Title from '../components/Title';
 import { useEffect, useState } from 'react';
 import { getProducts } from '../lib/products';
 
-// const products = [
-//   { id: 1, title: 'First Product' },
-//   { id: 2, title: 'Second Product' },
-//   { id: 3, title: 'Third Product' },
-// ];
-
 export default function HomePage() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
