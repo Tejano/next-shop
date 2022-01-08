@@ -1,8 +1,6 @@
-import Title from '../../components/Title';
-import Head from 'next/head';
 import { getProduct, getProducts } from '../../lib/products';
 import Image from 'next/image';
-
+import Page from '../../components/Page.js';
 export async function getStaticPaths(id) {
   const products = await getProducts(id);
   return {
@@ -29,14 +27,7 @@ export async function getStaticProps({ params: { id } }) {
 }
 export default function ProductPage({ product }) {
   return (
-    <>
-      <Head>
-        <title>Next Shop</title>
-        <meta name='description' content='Next Shop App' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-      <main className='px-6 py-4'>
-        <Title>{product.title}</Title>
+    <Page title = {product.title}>
         <div className='flex flex-col lg:flex-row'>
           {' '}
           <div>
@@ -52,7 +43,7 @@ export default function ProductPage({ product }) {
             <p className="text-lg font-bold">Price: {product.price}</p>
           </div>
          </div>
-      </main>
-    </>
+
+    </Page>
   );
 }
