@@ -4,11 +4,14 @@ import Field from '../components/Field.js';
 import Button from '../components/Button.js';
 import { useState } from 'react';
 import { fetchJson } from '../lib/api.js';
+import { useRouter} from 'next/router'
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function SignInPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
  // const [error, setError] = useState(false);
@@ -27,6 +30,7 @@ function SignInPage() {
       });
        setStatus({ loading: false, error: false });
       console.log('sign in: ', response);
+      router.push('/')
     } catch (err) {
        setStatus({ loading: false, error: true });
       //Todo
